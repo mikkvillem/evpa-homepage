@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import FacebookLogo from '../../../public/fb_logo.png';
+import Image from 'next/image';
+import PilatesLogoTransparent from '../../../public/pilates_logo_transparent.png';
 
 type Props = {
   navMap: Record<string, string>;
@@ -35,22 +31,46 @@ const NavSheet = (props: Props) => {
         </svg>
       </SheetTrigger>
       <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Are you sure absolutely sure?</SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your account and remove your
-            data from our servers.
-          </SheetDescription>
+        <SheetHeader className="w-48 mb-8">
+          <Link href="/">
+            <SheetClose asChild>
+              <Image
+                src={PilatesLogoTransparent}
+                alt="Erika Viira Pilatese Akadeemia logo"
+                className=""
+              />
+            </SheetClose>
+          </Link>
         </SheetHeader>
         <nav>
-          <ul className="list-none">
+          <ul className="list-none space-y-3">
             {Object.entries(props.navMap).map(([name, link]) => {
               return (
                 <li key={name}>
-                  <Link href={link}>{name}</Link>
+                  <Link href={link}>
+                    <SheetClose>
+                      <p className="text-base font-merriweather-bold capitalize hover:text-pallette-green">
+                        {name}
+                      </p>
+                    </SheetClose>
+                  </Link>
                 </li>
               );
             })}
+            <li>
+              <a
+                href="https://www.facebook.com/Erika-Viira-Pilatese-Akadeemia-721566977879613/"
+                target="_blank"
+              >
+                <Image
+                  src={FacebookLogo}
+                  alt="Faceook logo"
+                  width={28}
+                  height={28}
+                  className=""
+                />
+              </a>
+            </li>
           </ul>
         </nav>
       </SheetContent>
