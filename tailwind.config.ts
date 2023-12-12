@@ -1,7 +1,12 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -43,11 +48,11 @@ const config: Config = {
           foreground: 'hsl(var(--card-foreground))',
         },
         pallette: {
-          red: '#F28482',
-          green: '#6A9187',
-          pink: '#F5CAC3',
-          beige: '#F7EDE2',
-          yellow: '#F6BD60',
+          red: 'hsl(var(--pallette-red))',
+          green: 'hsl(var(--pallette-green))',
+          pink: 'hsl(var(--pallette-pink))',
+          beige: 'hsl(var(--pallette-beige))',
+          yellow: 'hsl(var(--pallette-yellow))',
         },
       },
       borderRadius: {
@@ -68,6 +73,11 @@ const config: Config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      backgroundImage: {
+        polka: 'radial-gradient(hsl(var(--pallette-yellow)) 1px, rgba(0, 0, 0, 0) 1px)',
+        lines:
+          'repeating-linear-gradient(45deg, hsl(var(--pallette-red)) 0px, hsl(var(--pallette-red)) 1px, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 50%)',
       },
     },
   },

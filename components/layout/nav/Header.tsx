@@ -16,9 +16,9 @@ const navMap = {
 
 const Header = (props: Props) => {
   return (
-    <header className="py-2 space-y-4">
+    <header className="relative space-y-4">
       <div className="w-full flex justify-between sm:justify-center items-center relative ">
-        <div className="mt-4 w-48 md:w-96">
+        <div className="md:mt-4 w-48 md:w-96">
           <Link href="/">
             <Image
               src={PilatesLogoTransparent}
@@ -28,7 +28,7 @@ const Header = (props: Props) => {
           </Link>
         </div>
         {/* Mobile nav */}
-        <div className="md:hidden">
+        <div className="md:hidden flex">
           <NavSheet
             className="sm:absolute sm:right-0 sm:transform sm:-translate-y-1/2"
             navMap={navMap}

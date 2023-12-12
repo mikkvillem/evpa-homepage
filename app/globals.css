@@ -33,6 +33,12 @@
     --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
+
+    --pallette-red: 1, 81%, 73%;
+    --pallette-green: 165, 16%, 49%;
+    --pallette-pink: 8, 71%, 86%;
+    --pallette-beige: 31, 57%, 93%;
+    --pallette-yellow: 37, 89%, 67%;
   }
 }
 
