@@ -1,0 +1,102 @@
+{
+  "workouts": [
+    {
+      "day": 1,
+      "time": "12:00",
+      "duration": 60,
+      "name": "Pilates kõigile",
+      "instructor": "Erika"
+    },
+    {
+      "day": 1,
+      "time": "18:15",
+      "duration": 60,
+      "name": "Baas",
+      "instructor": "Erika"
+    },
+    {
+      "day": 2,
+      "time": "08:15",
+      "duration": 60,
+      "name": "Võimleme koos",
+      "instructor": "Erika"
+    },
+    {
+      "day": 2,
+      "time": "10:00",
+      "duration": 60,
+      "name": "Baas / L1",
+      "instructor": "Erika"
+    },
+    {
+      "day": 2,
+      "time": "16:30",
+      "duration": 60,
+      "name": "L1 / L2",
+      "instructor": "Erika"
+    },
+    {
+      "day": 2,
+      "time": "17:30",
+      "duration": 60,
+      "name": "L1",
+      "instructor": "Erika"
+    },
+    {
+      "day": 3,
+      "time": "12:00",
+      "duration": 60,
+      "name": "Pilates kõigile",
+      "instructor": "Erika"
+    },
+    {
+      "day": 3,
+      "time": "18:15",
+      "duration": 60,
+      "name": "Baas",
+      "instructor": "Erika"
+    },
+    {
+      "day": 4,
+      "time": "08:15",
+      "duration": 60,
+      "name": "Võimleme koos",
+      "instructor": "Erika"
+    },
+    {
+      "day": 4,
+      "time": "10:00",
+      "duration": 60,
+      "name": "Baas / L1",
+      "instructor": "Erika"
+    },
+    {
+      "day": 4,
+      "time": "16:30",
+      "duration": 60,
+      "name": "L2",
+      "instructor": "Erika"
+    },
+    {
+      "day": 4,
+      "time": "17:30",
+      "duration": 60,
+      "name": "L1",
+      "instructor": "Erika"
+    },
+    {
+      "day": 5,
+      "time": "12:00",
+      "duration": 60,
+      "name": "Pilates kõigile",
+      "instructor": "Erika"
+    },
+    {
+      "day": 7,
+      "time": "10:00",
+      "duration": 60,
+      "name": "L1",
+      "instructor": "Erika"
+    }
+  ]
+}

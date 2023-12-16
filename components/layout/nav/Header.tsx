@@ -18,7 +18,7 @@ const Header = (props: Props) => {
   return (
     <header className="relative space-y-4">
       <div className="w-full flex justify-between sm:justify-center items-center relative ">
-        <div className="md:mt-4 w-48 md:w-96">
+        <div className="md:mt-4 w-48 md:w-64">
           <Link href="/">
             <Image
               src={PilatesLogoTransparent}

@@ -69,7 +69,7 @@ const BackgroundShapes = () => {
           className="-top-12 -right-10 w-44"
         />
         <BackgroundShape
-          fillClassName="fill-pallette-green"
+          fillClassName="fill-pallette-red"
           className="-bottom-12 -left-10 w-24 transform -scale-100 -rotate-90"
         />
       </div>
@@ -85,14 +85,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body
         className={cn(
-          'font-montserrat bg-pallette-beige flex flex-col w-full h-full min-h-screen relative overflow-hidden',
+          'font-montserrat bg-pallette-beige flex flex-col w-full h-full min-h-screen relative',
           merriweatherBold.variable,
           montserrat.variable
         )}
       >
-        <div className="p-4">
+        <div className="p-4 h-full">
           <Header />
-          {children}
+          <main className="relative w-full md:max-w-4xl lg:max-w-5xl mx-auto flex min-h-full flex-col items-start md:items-center mb-6">
+            {children}
+          </main>
         </div>
         <BackgroundShapes />
       </body>
