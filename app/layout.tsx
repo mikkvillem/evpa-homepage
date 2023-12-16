@@ -54,14 +54,14 @@ const BackgroundPatternPolka = () => (
 const BackgroundPatternLines = () => (
   <div
     style={{ backgroundSize: '20px 20px' }}
-    className="absolute bg-lines bg-repeat w-64 md:w-96 aspect-square rounded-full bottom-0 right-0 translate-x-1/2 translate-y-1/2 md:translate-x-1/3 md:translate-y-1/3"
+    className="absolute bottom-0 right-0 w-64 translate-x-1/2 translate-y-1/2 bg-repeat rounded-full bg-lines md:w-96 aspect-square md:translate-x-1/3 md:translate-y-1/3"
   ></div>
 );
 
 const BackgroundShapes = () => {
   return (
-    <div className="absolute w-full h-full overflow-hidden -z-10">
-      <div className="w-full h-full relative">
+    <div className="absolute w-full h-full overflow-hidden -z-20">
+      <div className="relative w-full h-full">
         <BackgroundPatternPolka />
         <BackgroundPatternLines />
         <BackgroundShape
@@ -70,7 +70,7 @@ const BackgroundShapes = () => {
         />
         <BackgroundShape
           fillClassName="fill-pallette-red"
-          className="-bottom-12 -left-10 w-24 transform -scale-100 -rotate-90"
+          className="w-24 transform -rotate-90 -bottom-12 -left-10 -scale-100"
         />
       </div>
     </div>
@@ -90,9 +90,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           montserrat.variable
         )}
       >
-        <div className="p-4 h-full">
+        <div className="h-full p-4">
           <Header />
-          <main className="relative w-full md:max-w-4xl lg:max-w-5xl mx-auto flex min-h-full flex-col items-start md:items-center mb-6">
+          <main className="relative flex flex-col items-start w-full min-h-full mx-auto mb-6 md:max-w-4xl lg:max-w-5xl md:items-center">
             {children}
           </main>
         </div>
