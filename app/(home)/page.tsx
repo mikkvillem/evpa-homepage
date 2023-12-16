@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
-import type { Tund } from '@/lib/types';
 import { cn, currentDay } from '@/lib/utils';
+import type { Tund } from '../tunniplaan/types';
 import Link from 'next/link';
 import Divider from '@/components/layout/nav/Divider';
 

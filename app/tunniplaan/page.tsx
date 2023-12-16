@@ -1,8 +1,7 @@
-import Timetable from '@/components/layout/Timetable';
+import Timetable from '@/app/tunniplaan/Timetable';
 import Divider from '@/components/layout/nav/Divider';
-import React from 'react';
 import { promises as fs } from 'fs';
-import type { Tund } from '@/lib/types';
+import type { Tund } from './types';
 
 const scheduleTitle = 'Tunniplaan';
 const scheduleSubtitle =
