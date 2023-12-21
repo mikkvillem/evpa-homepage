@@ -11,6 +11,7 @@ const navMap = {
   tunniplaan: '/tunniplaan',
   hinnakiri: '/hinnakiri',
   pilatesest: '/pilatesest',
+  õpetajast: '/opetajast',
   kontakt: '/kontakt',
 } as const;
 
@@ -36,7 +37,7 @@ const Header = (props: Props) => {
         </div>
       </div>
       {/* Desktop nav */}
-      <div className="hidden md:pt-4 md:flex md:flex-row md:justify-center md:items-center md:gap-20 lg:gap-28">
+      <div className="hidden md:pt-4 md:flex md:flex-row md:justify-center md:items-center md:gap-20 lg:gap-24">
         {Object.entries(navMap).map(([name, link]) => {
           return (
             <Link
