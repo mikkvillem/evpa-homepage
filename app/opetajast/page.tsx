@@ -74,7 +74,7 @@ const AboutPage = () => {
       </h1>
 
       <div className="">
-        <h2 className="md:my-4 my-2 sm:my-3 md:self-start sm:text-xl font-merriweather-bold text-lg md:text-3xl text-black">
+        <h2 className="text-pallette-green md:my-4 my-2 sm:my-3 md:self-start sm:text-xl font-merriweather-bold text-lg md:text-3xl text-black">
           Erialane töökogemus
         </h2>
         {/*         <h3 className="font-bold">Erialane töökogemus</h3>
@@ -83,29 +83,31 @@ const AboutPage = () => {
           return (
             <div
               key={description}
-              className="grid grid-cols-12 md:gap-x-4 md:gap-y-2"
+              style={{ gridTemplateColumns: '100px 1fr' }}
+              className="grid md:gap-x-4 md:gap-y-2"
             >
-              <p className="mt-2 md:mt-0 font-semibold col-span-12 text-left md:col-span-2 md:text-right">
+              <p className="mt-2 md:mt-0 font-semibold col-span-2 text-left md:col-span-1">
                 {start} - {end ?? '...'}
               </p>
-              <p className="text-sm sm:text-base col-span-12 md:col-span-10">{description}</p>
+              <p className="text-sm sm:text-base col-span-2 md:col-span-1">{description}</p>
             </div>
           );
         })}
-        <h2 className="md:my-4 my-2 sm:my-3 md:self-start sm:text-xl font-merriweather-bold text-lg md:text-3xl text-black">
+        <h2 className="text-pallette-green md:my-4 mt-8 sm:my-3 md:self-start sm:text-xl font-merriweather-bold text-lg md:text-3xl text-black">
           Erialane koolitus
         </h2>
         {cv.education.map(({ start, end, description }) => {
           return (
             <div
               key={description}
-              className="grid grid-cols-12 md:gap-x-4 md:gap-y-2"
+              style={{ gridTemplateColumns: '100px 1fr' }}
+              className="grid md:gap-x-4 md:gap-y-2"
             >
-              <p className="mt-2 md:mt-0 font-semibold col-span-12 text-left md:col-span-2 md:text-right">
+              <p className="mt-2 md:mt-0 font-semibold col-span-2 text-left md:col-span-1">
                 {start}
                 {end ? ` - ${end}` : ''}
               </p>
-              <p className="text-sm sm:text-base col-span-12 md:col-span-10">{description}</p>
+              <p className="text-sm sm:text-base col-span-2 md:col-span-1">{description}</p>
             </div>
           );
         })}
@@ -113,7 +115,7 @@ const AboutPage = () => {
       <Image
         alt="Erika viira narritaja poosis rohelisel murul"
         src={ErikaViiraNarritaja}
-        className="mt-4 rounded-xl border-8 border-pallette-pink"
+        className="mt-4 rounded-xl outline outline-6 outline-pallette-green border-4 border-pallette-beige"
       />
     </>
   );
