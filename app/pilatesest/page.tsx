@@ -1,14 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
 import PilatesPositions from '../../public/joseph_pilates.webp';
+import H1 from '@/components/typography/H1';
 const pageTitle = 'Mis on Pilates?';
 
 const AboutPage = () => {
   return (
     <>
-      <h1 className="mt-10 text-2xl text-center text-black sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold md:text-6xl">
-        {pageTitle}
-      </h1>
+      <H1>{pageTitle}</H1>
 
       <div className="space-y-2 my-4 text-sm sm:text-base">
         <div className="hidden md:block float-right max-w-md mt-3">

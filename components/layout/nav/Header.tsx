@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 type Props = {};
 
 const navMap = {
+  avaleht: '/',
   tunniplaan: '/tunniplaan',
   hinnakiri: '/hinnakiri',
   pilatesest: '/pilatesest',
@@ -42,7 +43,7 @@ const Header = (props: Props) => {
         </div>
       </div>
       {/* Desktop nav */}
-      <div className="hidden md:pt-4 md:flex md:flex-row md:justify-center md:items-center md:gap-20 lg:gap-24">
+      <div className="hidden md:pt-4 md:flex md:flex-row md:justify-center md:items-center md:gap-12">
         {Object.entries(navMap).map(([name, link]) => {
           return (
             <Link

@@ -28,10 +28,10 @@ export default async function Home() {
   const todaysClasses = groupByDay[dayToday];
   return (
     <>
-      <h1 className="md:self-start mt-10 sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold text-2xl md:text-6xl text-black">
+      <h1 className=" mt-10 sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold text-2xl md:text-6xl text-black text-center">
         {heroTitle}
       </h1>
-      <p className="md:self-start sm:mt-2 sm:text-xl md:mt-4 font-montserrat text-lg md:text-2xl text-black max-w-3xl font-light">
+      <p className=" md:text-center sm:mt-2 sm:text-xl md:mt-4 font-montserrat text-lg md:text-2xl text-black max-w-3xl font-light">
         {heroSubtitle}
       </p>
 

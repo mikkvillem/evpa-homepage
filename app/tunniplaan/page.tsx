@@ -2,6 +2,7 @@ import Timetable from '@/app/tunniplaan/Timetable';
 import Divider from '@/components/layout/nav/Divider';
 import { promises as fs } from 'fs';
 import type { Tund } from './types';
+import H1 from '@/components/typography/H1';
 
 const scheduleTitle = 'Tunniplaan';
 const scheduleSubtitle =
@@ -12,10 +13,8 @@ const TimetablePage = async () => {
   const schedule: { workouts: Tund[] } = JSON.parse(file);
   return (
     <>
-      <h1 className="text-center mt-10 sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold text-2xl md:text-6xl text-black">
-        {scheduleTitle}
-      </h1>
-      <p className="text-center sm:mt-2 sm:text-xl md:mt-4 font-montserrat text-lg md:text-2xl text-black max-w-3xl font-light">
+      <H1>{scheduleTitle}</H1>
+      <p className="text-center sm:mt-2 md:mt-4 font-montserrat text-lg md:text-xl text-black max-w-2xl font-light">
         {scheduleSubtitle}
       </p>
       <Divider />

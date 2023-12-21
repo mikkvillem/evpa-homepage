@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import MapImage from '../../public/pilates_map.svg';
 import Link from 'next/link';
+import H1 from '@/components/typography/H1';
 
 const contactTitle = 'Kontakt';
 const contact = {
@@ -16,9 +17,7 @@ const ContactPage = () => {
   return (
     <div className="w-full sm:mt-8 mt-10 md:mt-14 justify-center flex flex-col md:flex-row-reverse gap-4 md:gap-12">
       <div className="">
-        <h1 className="text-2xl text-left text-black sm:text-4xl font-merriweather-bold md:text-6xl">
-          {contactTitle}
-        </h1>
+        <H1 className="md:text-left md:mt-0 mt-0">{contactTitle}</H1>
         <div className="flex gap-x-3">
           <div className="">
             {Object.keys(contact).map((key) => {

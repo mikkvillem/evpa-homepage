@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import { Product } from './types';
 import PilatesLogoTransparent from '../../public/pilates_logo_transparent.png';
 import Image from 'next/image';
+import H1 from '@/components/typography/H1';
 
 const pricingTitle = 'Hinnakiri';
 const pricingSubtitle = 'Kehtiv alates 01. jaanuar 2022';
@@ -55,10 +56,8 @@ const PricingPage = async () => {
   const { products }: { products: Product[] } = JSON.parse(file);
   return (
     <>
-      <h1 className="mt-10 text-2xl text-center text-black sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold md:text-6xl">
-        {pricingTitle}
-      </h1>
-      <p className="max-w-3xl text-lg font-light text-center text-black sm:mt-2 sm:text-xl md:mt-4 font-montserrat md:text-2xl">
+      <H1>{pricingTitle}</H1>
+      <p className="text-center sm:mt-2 md:mt-4 font-montserrat text-lg md:text-xl text-black max-w-2xl font-light">
         {pricingSubtitle}
       </p>
       <div className="flex flex-wrap justify-center w-full gap-4 mt-8">

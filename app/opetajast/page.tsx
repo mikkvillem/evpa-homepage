@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import ErikaViiraNarritaja from '../../public/erika_viira.jpg';
+import H1 from '@/components/typography/H1';
 
 const aboutTitle = 'Erika Viira';
 
@@ -69,9 +70,7 @@ const cv = {
 const AboutPage = () => {
   return (
     <>
-      <h1 className="mt-10 text-2xl text-center text-black sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold md:text-6xl">
-        {aboutTitle}
-      </h1>
+      <H1 className="">{aboutTitle}</H1>
 
       <div className="">
         <h2 className="text-pallette-green md:my-4 my-2 sm:my-3 md:self-start sm:text-xl font-merriweather-bold text-lg md:text-3xl text-black">

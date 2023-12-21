@@ -79,10 +79,7 @@ const BackgroundShapes = () => {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className="w-"
-    >
+    <html lang="en">
       <body
         className={cn(
           'font-montserrat bg-pallette-beige flex flex-col w-full h-full min-h-screen relative',
