@@ -4,13 +4,13 @@
       "id": "personal",
       "price": 30,
       "name": "Personaaltreening",
-      "info": []
+      "info": ["1 kord"]
     },
     {
       "id": "duo",
       "price": 40,
       "name": "Duo-treening",
-      "info": []
+      "info": ["1 kord"]
     },
     {
       "id": "group-4x",

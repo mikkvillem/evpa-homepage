@@ -9,7 +9,15 @@ const AboutPage = () => {
       <h1 className="mt-10 text-2xl text-center text-black sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold md:text-6xl">
         {pageTitle}
       </h1>
+
       <div className="space-y-2 my-4 text-sm sm:text-base">
+        <div className="hidden md:block float-right max-w-md mt-3">
+          <Image
+            alt="Pilatese harjutuste positsioonid"
+            src={PilatesPositions}
+            className="rounded-md border-2 border-pallette-green"
+          />
+        </div>
         <p>
           Pilates on treeningsüsteem, mis on nime saanud selle looja, Joseph H. Pilatese järgi.
           Pilatese süsteemi harjutused õpetavad kontrollima oma kehahoidu ja liigutusi ning muudavad
@@ -34,11 +42,18 @@ const AboutPage = () => {
           Klassikalise pilatese treeningsüsteemis on väga olulisel kohal pilatese põhimõtted ja
           pilatese ühendused.
         </p>
+        <div className="md:hidden">
+          <Image
+            alt="Pilatese harjutuste positsioonid"
+            src={PilatesPositions}
+            className="rounded-md border-2 border-pallette-green"
+          />
+        </div>
       </div>
       <h2 className="text-pallette-green md:my-4 my-2 sm:my-3 md:self-start sm:text-xl font-merriweather-bold text-lg md:text-3xl text-black">
         Pilatese harjutused
       </h2>
-      <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm sm:text-base">
+      <div className="text-sm sm:text-base w-full">
         <ul className="list-disc list-outside ml-4">
           <li>treenivad keha kuklast kandadeni</li>
           <li>
@@ -59,13 +74,6 @@ const AboutPage = () => {
           <li>sobivad igas eas ja kehalises vormis harrastajatele (sh eakad ja rasedad)</li>
           <li>toetavad kõiki teisi treeninguid ja muudavad ka igapäevased toimingud lihtsamaks</li>
         </ul>
-        <div>
-          <Image
-            alt="Pilatese harjutuste positsioonid"
-            src={PilatesPositions}
-            className=""
-          />
-        </div>
       </div>
     </>
   );

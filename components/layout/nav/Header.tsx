@@ -1,9 +1,13 @@
+'use client';
+
 import React from 'react';
 import NavSheet from './NavSheet';
 import Image from 'next/image';
 import PilatesLogoTransparent from '../../../public/pilates_logo_transparent.png';
 import FacebookLogo from '../../../public/fb_logo.png';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 type Props = {};
 
@@ -16,6 +20,7 @@ const navMap = {
 } as const;
 
 const Header = (props: Props) => {
+  const pathname = usePathname();
   return (
     <header className="relative space-y-4">
       <div className="w-full flex justify-between sm:justify-center items-center relative ">
@@ -42,7 +47,12 @@ const Header = (props: Props) => {
           return (
             <Link
               key={name}
-              className="text-base lg:text-lg font-merriweather-bold capitalize hover:text-pallette-green"
+              className={cn(
+                'text-base lg:text-lg font-merriweather-bold capitalize hover:text-pallette-green',
+                pathname === link && 'text-pallette-green underline pointer-events-none'
+              )}
+              aria-disabled={pathname === link}
+              tabIndex={pathname === link ? -1 : 0}
               href={link}
             >
               {name}

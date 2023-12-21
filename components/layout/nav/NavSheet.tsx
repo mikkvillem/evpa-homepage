@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -5,6 +7,7 @@ import Link from 'next/link';
 import FacebookLogo from '../../../public/fb_logo.png';
 import Image from 'next/image';
 import PilatesLogoTransparent from '../../../public/pilates_logo_transparent.png';
+import { usePathname } from 'next/navigation';
 
 type Props = {
   navMap: Record<string, string>;
@@ -12,6 +15,7 @@ type Props = {
 };
 
 const NavSheet = (props: Props) => {
+  const pathname = usePathname();
   return (
     <Sheet>
       <SheetTrigger className={cn('w-8 h-8', props.className)}>
@@ -49,7 +53,14 @@ const NavSheet = (props: Props) => {
                 <li key={name}>
                   <Link href={link}>
                     <SheetClose>
-                      <p className="text-base font-merriweather-bold capitalize hover:text-pallette-green">
+                      <p
+                        className={cn(
+                          'text-base font-merriweather-bold capitalize hover:text-pallette-green',
+                          pathname === link && 'text-pallette-green pointer-events-none underline'
+                        )}
+                        aria-disabled={pathname === link}
+                        tabIndex={pathname === link ? -1 : 0}
+                      >
                         {name}
                       </p>
                     </SheetClose>
