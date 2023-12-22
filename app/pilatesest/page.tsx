@@ -2,13 +2,15 @@ import Image from 'next/image';
 import React from 'react';
 import PilatesPositions from '../../public/joseph_pilates.webp';
 import H1 from '@/components/typography/H1';
-const pageTitle = 'Mis on Pilates?';
+const pageTitle = 'Pilatesest';
 
 const AboutPage = () => {
   return (
     <>
       <H1>{pageTitle}</H1>
-
+      <h2 className="my-2 text-lg text-black text-pallette-green md:my-4 sm:my-3 md:self-start sm:text-xl font-merriweather-bold md:text-3xl">
+        Mis on Pilates?
+      </h2>
       <div className="space-y-2 text-sm md:my-4 sm:text-base">
         <div className="hidden float-right max-w-md mt-3 md:block">
           <Image

@@ -1,28 +1,32 @@
 {
   "products": [
     {
-      "id": "personal",
-      "price": 30,
-      "name": "Personaaltreening",
-      "info": ["1 kord"]
-    },
-    {
-      "id": "duo",
-      "price": 40,
-      "name": "Duo-treening",
-      "info": ["1 kord"]
-    },
-    {
       "id": "group-4x",
       "price": 30,
-      "name": "4-korra kaart",
+      "name": "Rühmatreeningud",
+      "quantity": "(4-korra kaart)",
       "info": ["Kehtib 1 kuu"]
     },
     {
       "id": "group-8x",
       "price": 55,
-      "name": "8-korra kaart",
+      "name": "Rühmatreeningud",
+      "quantity": "(8-korra kaart)",
       "info": ["Kehtib 1 kuu"]
+    },
+    {
+      "id": "personal",
+      "price": 30,
+      "name": "Personaaltreening",
+      "quantity": "(1 kord)",
+      "info": []
+    },
+    {
+      "id": "duo",
+      "price": 40,
+      "name": "Duo-treening",
+      "quantity": "(1 kord)",
+      "info": []
     }
   ]
 }

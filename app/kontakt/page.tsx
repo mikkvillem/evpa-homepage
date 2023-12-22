@@ -15,9 +15,9 @@ const mapsLink =
   'https://www.google.com/maps/search/?api=1&query=58.3670847-25.5957376,21z&query_place_id=ChIJz7eE54SY7EYR8IJst1L2Q90';
 const ContactPage = () => {
   return (
-    <div className="w-full sm:mt-8 mt-10 md:mt-14 justify-center flex flex-col md:flex-row-reverse gap-4 md:gap-12">
+    <div className="flex flex-col justify-center w-full gap-4 mt-10 sm:mt-8 md:mt-14 md:flex-row-reverse md:gap-12">
       <div className="">
-        <H1 className="md:text-left md:mt-0 mt-0">{contactTitle}</H1>
+        <H1 className="mt-0 text-left md:mt-0">{contactTitle}</H1>
         <div className="flex gap-x-3">
           <div className="">
             {Object.keys(contact).map((key) => {
@@ -25,7 +25,7 @@ const ContactPage = () => {
               return (
                 <p
                   key={'contact_' + key}
-                  className="text-left text-lg font-semibold text-black sm:text-xl md:mt-4 font-montserrat"
+                  className="text-lg font-semibold text-left text-black sm:text-xl md:mt-4 font-montserrat"
                 >
                   {`${typeTitle}: `}
                 </p>

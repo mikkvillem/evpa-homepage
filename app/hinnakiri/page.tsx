@@ -9,7 +9,7 @@ const pricingTitle = 'Hinnakiri';
 const pricingSubtitle = 'Kehtiv alates 01. jaanuar 2022';
 
 const PriceCard = ({ product }: { product: Product }) => {
-  const { id, name, price, info } = product;
+  const { id, name, price, info, quantity } = product;
 
   const priceString = new Intl.NumberFormat('et-ET', {
     style: 'currency',
@@ -34,13 +34,14 @@ const PriceCard = ({ product }: { product: Product }) => {
           />
         </div>
       </div>
-      <div className="flex flex-col justify-between flex-1 py-8">
-        <h2 className="relative text-xl font-bold font-merriweather-bold">{name}</h2>
+      <div className="flex flex-col justify-between flex-1 py-6">
+        <h2 className="relative text-xl font-merriweather-bold">{name}</h2>
+        <h3 className="relative mb-auto text-lg font-merriweather-bold">{quantity}</h3>
         {info.length > 0 &&
           info.map((bullet, index) => (
             <p
               key={id + '_bullet_' + index}
-              className="relative"
+              className="relative mb-2"
             >
               {bullet}
             </p>
@@ -57,7 +58,7 @@ const PricingPage = async () => {
   return (
     <>
       <H1>{pricingTitle}</H1>
-      <p className="text-center sm:mt-2 md:mt-4 font-montserrat text-lg md:text-xl text-black max-w-2xl font-light">
+      <p className="max-w-2xl text-lg font-light text-center text-black sm:mt-2 md:mt-4 font-montserrat md:text-xl">
         {pricingSubtitle}
       </p>
       <div className="flex flex-wrap justify-center w-full gap-4 mt-8">
