@@ -53,27 +53,27 @@ const Timetable = ({ className, workouts }: TimetableProps) => {
   return (
     <>
       {/* Mobile */}
-      <div className="md:hidden w-full -mt-4">
+      <div className="w-full -mt-4 md:hidden">
         {Object.entries(workoutsByDay).map(([day, workouts]) => {
           return (
             <div
               key={dayName[Number(day) - 1]}
               id={dayName[Number(day) - 1]}
-              className="mt-4 flex flex-col gap-2 w-full"
+              className="flex flex-col w-full gap-2 mt-4"
             >
-              <div className="w-full mb-2 font-semibold py-1 border-2 border-pallette-green text-center font-montserrat bg-pallette-yellow text-pallette-green text-base">
+              <div className="w-full py-1 mb-2 text-base font-semibold text-center border-2 border-pallette-green font-montserrat bg-pallette-yellow text-pallette-green">
                 {dayName[Number(day) - 1]}
               </div>
               {workouts.map(({ day, time, name, duration }) => {
                 return (
                   <div
                     key={`${day}_${time}`}
-                    className="w-full px-2 py-3 border-2 border-pallette-green text-left font-montserrat text-white bg-pallette-green"
+                    className="w-full px-2 py-3 text-left text-white border-2 border-pallette-green font-montserrat bg-pallette-green"
                   >
                     <p className="text-xs">
                       Kell {time} - {addMinutesToTimeString(time, duration)}
                     </p>
-                    <h4 className="font-semibold text-base">{name}</h4>
+                    <h4 className="text-base font-semibold">{name}</h4>
                   </div>
                 );
               })}

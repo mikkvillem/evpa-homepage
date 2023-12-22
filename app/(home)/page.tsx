@@ -28,15 +28,15 @@ export default async function Home() {
   const todaysClasses = groupByDay[dayToday];
   return (
     <>
-      <h1 className=" mt-10 sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold text-2xl md:text-6xl text-black text-center">
+      <h1 className="mt-10 mb-2 text-2xl text-center text-black sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold md:text-6xl">
         {heroTitle}
       </h1>
-      <p className=" md:text-center sm:mt-2 sm:text-xl md:mt-4 font-montserrat text-lg md:text-2xl text-black max-w-3xl font-light">
+      <p className="max-w-3xl text-lg font-light text-black md:text-center sm:mt-2 sm:text-xl md:mt-4 font-montserrat md:text-2xl">
         {heroSubtitle}
       </p>
 
       <Divider />
-      <h2 className="md:self-start sm:text-xl font-merriweather-bold text-lg md:text-3xl text-black">
+      <h2 className="text-lg text-black md:self-start sm:text-xl font-merriweather-bold md:text-3xl">
         Tänased rühmatreeningud
       </h2>
       {!todaysClasses || todaysClasses?.length === 0 ? (
@@ -55,8 +55,8 @@ export default async function Home() {
                 key={`${day}_${time}_${name}`}
                 className={cn('p-4 text-left space-y-2', colorMap[index])}
               >
-                <p className="font-montserrat text-base sm:text-lg md:text-xl">Kell {time}</p>
-                <h4 className="font-montserrat text-lg sm:text-xl md:text-2xl font-bold">{name}</h4>
+                <p className="text-base font-montserrat sm:text-lg md:text-xl">Kell {time}</p>
+                <h4 className="text-lg font-bold font-montserrat sm:text-xl md:text-2xl">{name}</h4>
               </div>
             );
           })}
@@ -64,7 +64,7 @@ export default async function Home() {
       )}
       <Link
         href={'/tunniplaan'}
-        className="w-full sm:w-auto ml-auto p-4 flex gap-2 bg-pallette-green md:text-xl text-white font-montserrat"
+        className="flex w-full gap-2 p-4 ml-auto text-white sm:w-auto bg-pallette-green md:text-xl font-montserrat"
       >
         Vaata kogu tunniplaani
         <svg

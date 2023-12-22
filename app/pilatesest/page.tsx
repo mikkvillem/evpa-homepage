@@ -9,12 +9,12 @@ const AboutPage = () => {
     <>
       <H1>{pageTitle}</H1>
 
-      <div className="space-y-2 my-4 text-sm sm:text-base">
-        <div className="hidden md:block float-right max-w-md mt-3">
+      <div className="space-y-2 text-sm md:my-4 sm:text-base">
+        <div className="hidden float-right max-w-md mt-3 md:block">
           <Image
             alt="Pilatese harjutuste positsioonid"
             src={PilatesPositions}
-            className="rounded-md border-2 border-pallette-green"
+            className="border-2 rounded-md border-pallette-green"
           />
         </div>
         <p>
@@ -45,15 +45,15 @@ const AboutPage = () => {
           <Image
             alt="Pilatese harjutuste positsioonid"
             src={PilatesPositions}
-            className="rounded-md border-2 border-pallette-green"
+            className="mt-4 mb-2 border-2 rounded-md border-pallette-green"
           />
         </div>
       </div>
-      <h2 className="text-pallette-green md:my-4 my-2 sm:my-3 md:self-start sm:text-xl font-merriweather-bold text-lg md:text-3xl text-black">
+      <h2 className="my-2 text-lg text-black text-pallette-green md:my-4 sm:my-3 md:self-start sm:text-xl font-merriweather-bold md:text-3xl">
         Pilatese harjutused
       </h2>
-      <div className="text-sm sm:text-base w-full">
-        <ul className="list-disc list-outside ml-4">
+      <div className="w-full text-sm sm:text-base">
+        <ul className="ml-4 list-disc list-outside">
           <li>treenivad keha kuklast kandadeni</li>
           <li>
             arendavad igakülgselt kehalist vormi - jõudu, painduvust, koordinatsiooni, kiirust ja

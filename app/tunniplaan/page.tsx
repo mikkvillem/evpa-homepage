@@ -14,7 +14,7 @@ const TimetablePage = async () => {
   return (
     <>
       <H1>{scheduleTitle}</H1>
-      <p className="text-center sm:mt-2 md:mt-4 font-montserrat text-lg md:text-xl text-black max-w-2xl font-light">
+      <p className="max-w-2xl text-lg font-light text-black md:text-center sm:mt-2 md:mt-4 font-montserrat md:text-xl">
         {scheduleSubtitle}
       </p>
       <Divider />

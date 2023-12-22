@@ -10,7 +10,8 @@ const H1 = (props: PropsWithChildren<H1Props>) => {
   return (
     <div
       className={cn(
-        'mt-10 text-2xl text-center text-pallette-green sm:mt-8 sm:text-3xl md:mt-14 font-merriweather-bold md:text-5xl',
+        'mt-10 sm:mt-8 md:mt-14 mb-2',
+        'font-merriweather-bold text-center text-pallette-green text-2xl sm:text-3xl md:text-5xl',
         props.className
       )}
     >
