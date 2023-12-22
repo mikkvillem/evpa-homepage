@@ -23,7 +23,7 @@ const TableCell = ({
           ? 'bg-transparent'
           : heading
           ? 'bg-pallette-yellow text-pallette-green font-montserrat font-bold'
-          : 'bg-pallette-green text-xs text-white font-montserrat text-center',
+          : 'bg-pallette-green text-white font-montserrat text-center',
         className
       )}
     >

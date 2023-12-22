@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Divider from '@/components/layout/nav/Divider';
 
 const heroTitle = 'Tule, võimleme koos!';
-const heroSubtitle = 'Ootan Sind Pilatese treeningutesse õdusas Viljandi kesklinna stuudios!';
+const heroSubtitle = 'Ootan Sind Pilatese treeningutesse koduses Viljandi kesklinna stuudios!';
 
 const colorMap = [
   'bg-pallette-pink',
@@ -64,7 +64,7 @@ export default async function Home() {
       )}
       <Link
         href={'/tunniplaan'}
-        className="flex w-full gap-2 p-4 ml-auto text-white sm:w-auto bg-pallette-green md:text-xl font-montserrat"
+        className="hover:scale-[102%] ease-in-out hover:opacity-95 transition duration-300 flex w-full gap-2 p-4 ml-auto text-white sm:w-auto bg-pallette-green md:text-xl font-montserrat"
       >
         Vaata kogu tunniplaani
         <svg
