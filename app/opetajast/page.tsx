@@ -27,6 +27,11 @@ const cv = {
   ],
   education: [
     {
+      start: 2023,
+      end: undefined,
+      description: 'Bret Miller (Rootsi) "Going Deeper into the Richness of Pilates"',
+    },
+    {
       start: 2017,
       end: undefined,
       description:

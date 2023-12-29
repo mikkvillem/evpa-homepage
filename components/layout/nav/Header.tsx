@@ -25,7 +25,7 @@ const Header = (props: Props) => {
   return (
     <header className="relative space-y-4">
       <div className="w-full flex justify-between sm:justify-center items-center relative ">
-        <div className="md:mt-4 w-48 md:w-64">
+        <div className="md:mt-2 w-48 md:w-52">
           <Link href="/">
             <Image
               src={PilatesLogoTransparent}
@@ -43,7 +43,7 @@ const Header = (props: Props) => {
         </div>
       </div>
       {/* Desktop nav */}
-      <div className="hidden md:pt-4 md:flex md:flex-row md:justify-center md:items-center md:gap-12">
+      <div className="hidden md:pt-2 md:flex md:flex-row md:justify-center md:items-center md:gap-12">
         {Object.entries(navMap).map(([name, link]) => {
           return (
             <Link

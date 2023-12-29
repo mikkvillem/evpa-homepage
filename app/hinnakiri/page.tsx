@@ -6,7 +6,7 @@ import Image from 'next/image';
 import H1 from '@/components/typography/H1';
 
 const pricingTitle = 'Hinnakiri';
-const pricingSubtitle = 'Kehtiv alates 01. jaanuar 2022';
+const pricingSubtitle = 'Kehtiv alates 15. jaanuar 2024';
 
 const PriceCard = ({ product }: { product: Product }) => {
   const { id, name, price, info, quantity } = product;
@@ -35,8 +35,8 @@ const PriceCard = ({ product }: { product: Product }) => {
         </div>
       </div>
       <div className="flex flex-col justify-between flex-1 py-6">
-        <h2 className="relative text-xl font-merriweather-bold">{name}</h2>
-        <h3 className="relative mb-auto text-lg font-merriweather-bold">{quantity}</h3>
+        <h2 className="relative text-lg font-merriweather-bold">{name}</h2>
+        <h3 className="relative mb-auto font-merriweather-bold">{quantity}</h3>
         {info.length > 0 &&
           info.map((bullet, index) => (
             <p
@@ -46,7 +46,9 @@ const PriceCard = ({ product }: { product: Product }) => {
               {bullet}
             </p>
           ))}
-        <h3 className="relative text-6xl font-bold font-merriweather-bold">{priceString}</h3>
+        <h3 className="relative text-5xl md:text-6xl font-bold font-merriweather-bold">
+          {priceString}
+        </h3>
       </div>
     </div>
   );
@@ -61,7 +63,7 @@ const PricingPage = async () => {
       <p className="max-w-2xl text-lg font-light text-center text-black sm:mt-2 md:mt-4 font-montserrat md:text-xl">
         {pricingSubtitle}
       </p>
-      <div className="flex flex-wrap justify-center w-full gap-4 mt-8">
+      <div className="flex flex-wrap justify-center w-full gap-4 sm:gap-6 mt-8">
         {products.map((product) => (
           <PriceCard
             key={product.id}
