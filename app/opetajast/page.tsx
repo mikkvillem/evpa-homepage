@@ -29,7 +29,7 @@ const cv = {
     {
       start: 2023,
       end: undefined,
-      description: 'Bret Miller (Rootsi) "Going Deeper into the Richness of Pilates"',
+      description: 'Koolitus "Going Deeper into the Richness of Pilates", Bret Miller (Rootsi)',
     },
     {
       start: 2017,
