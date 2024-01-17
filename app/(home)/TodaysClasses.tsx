@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Tund } from '../tunniplaan/types';
+import { Tund } from './tunniplaan/types';
 import { cn, currentDay } from '@/lib/utils';
 
 type TodaysClassesProps = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { promises as fs } from 'fs';
 import { Product } from './types';
-import PilatesLogoTransparent from '../../public/pilates_logo_transparent.png';
+import PilatesLogoTransparent from '@/public/pilates_logo_transparent.png';
 import Image from 'next/image';
 import H1 from '@/components/typography/H1';
 

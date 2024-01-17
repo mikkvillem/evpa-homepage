@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import PilatesPositions from '../../public/joseph_pilates.webp';
+import PilatesPositions from '@/public/joseph_pilates.webp';
 import H1 from '@/components/typography/H1';
 const pageTitle = 'Pilatesest';
 

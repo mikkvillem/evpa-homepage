@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import ErikaViiraNarritaja from '../../public/erika_viira.jpg';
+import ErikaViiraNarritaja from '@/public/erika_viira.jpg';
 import H1 from '@/components/typography/H1';
 
 const aboutTitle = 'Õpetajast';

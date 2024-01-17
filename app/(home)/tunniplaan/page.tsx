@@ -1,17 +1,17 @@
-import Timetable from '@/app/tunniplaan/Timetable';
+import Timetable from '@/app/(home)/tunniplaan/Timetable';
 import Divider from '@/components/layout/nav/Divider';
-import { promises as fs } from 'fs';
 import type { Tund } from './types';
 import H1 from '@/components/typography/H1';
 import Link from 'next/link';
+import { supabaseClient } from '@/lib/db/client';
 
 const scheduleTitle = 'Tunniplaan';
 const scheduleSubtitle =
   'Tundidesse on vajalik eelnevalt registreerida. Tund toimub vähemalt 3 osalejaga. ';
 
 const TimetablePage = async () => {
-  const file = await fs.readFile(process.cwd() + '/app/tunniplaan/tunniplaan.json', 'utf8');
-  const schedule: { workouts: Tund[] } = JSON.parse(file);
+  const { data } = await supabaseClient.from('workouts').select('*');
+  const workouts = data as Tund[] | null;
   return (
     <>
       <H1>{scheduleTitle}</H1>
@@ -29,7 +29,7 @@ const TimetablePage = async () => {
         </span>
       </p>
       <Divider />
-      <Timetable workouts={schedule.workouts} />
+      <Timetable workouts={workouts || []} />
     </>
   );
 };

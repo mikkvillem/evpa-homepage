@@ -1,5 +1,5 @@
 import React from 'react';
-import PilatesLogoTransparent from '../../public/pilates_logo_transparent.png';
+import PilatesLogoTransparent from '@/public/pilates_logo_transparent.png';
 import { cn, dayName, addMinutesToTimeString } from '@/lib/utils';
 import type { PropsWithOptionalChildren } from '@/lib/types';
 import type { Tund } from './types';

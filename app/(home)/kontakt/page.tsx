@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import MapImage from '../../public/pilates_map.svg';
+import MapImage from '@/public/pilates_map.svg';
 import Link from 'next/link';
 import H1 from '@/components/typography/H1';
 

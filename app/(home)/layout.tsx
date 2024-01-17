@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Merriweather, Montserrat } from 'next/font/google';
-import './globals.css';
+import '@/app/globals.css';
 import Header from '@/components/layout/nav/Header';
 import { cn } from '@/lib/utils';
 

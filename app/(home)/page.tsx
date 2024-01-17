@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs';
-import type { Tund } from '../tunniplaan/types';
+import type { Tund } from './tunniplaan/types';
 import Link from 'next/link';
 import Divider from '@/components/layout/nav/Divider';
 import TodaysClasses from './TodaysClasses';
@@ -8,7 +8,7 @@ const heroTitle = 'Tule, võimleme koos!';
 const heroSubtitle = 'Ootan Sind Pilatese treeningutesse koduses Viljandi kesklinna stuudios!';
 
 export default async function Home() {
-  const file = await fs.readFile(process.cwd() + '/app/tunniplaan/tunniplaan.json', 'utf8');
+  const file = await fs.readFile(process.cwd() + '/app/(home)/tunniplaan/tunniplaan.json', 'utf8');
   const { workouts }: { workouts: Tund[] } = JSON.parse(file);
 
   return (

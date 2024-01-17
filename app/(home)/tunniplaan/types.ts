@@ -3,5 +3,5 @@ export type Tund = {
   time: `${number}:${number}`; // "10:00" - UTC time
   duration: number; // positive number, minutes
   name: string; // class name type
-  instructor: string; // instructor types
+  instructor?: string; // instructor types
 };
