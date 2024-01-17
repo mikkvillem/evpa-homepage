@@ -5,7 +5,7 @@ import { Tund } from '../(home)/tunniplaan/types';
 
 export async function addWorkout(prevState: { message: string | null }, formData: FormData) {
   const formValues = {
-    day: formData.get('day'),
+    day: Number(formData.get('day')),
     time: formData.get('time'),
     name: formData.get('name'),
     instructor: formData.get('instructor'),

@@ -5,8 +5,17 @@ import { useFormState } from 'react-dom';
 import { addWorkout } from '../actions';
 import SubmitButton from './SubmitButton';
 import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Tund } from '@/app/(home)/tunniplaan/types';
 import { Label } from '@/components/ui/label';
+import { dayName } from '@/lib/utils';
 type Props = {
   workoutToEdit?: Tund;
 };
@@ -22,15 +31,29 @@ const AddWorkout = ({ workoutToEdit }: Props) => {
     >
       <div>
         <Label htmlFor="day">Nädalapäev</Label>
-        <Input
-          type="number"
-          name="day"
-          id="day"
-          min={1}
-          max={7}
-          defaultValue={workoutToEdit?.day || 1}
+        <Select
           required
-        />
+          name="day"
+        >
+          <SelectTrigger>
+            <SelectValue
+              placeholder={workoutToEdit?.day ? dayName[workoutToEdit.day - 1] : 'Vali siit'}
+              defaultValue={workoutToEdit?.day}
+            />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {dayName.map((name, index) => (
+                <SelectItem
+                  key={name}
+                  value={`${index + 1}`}
+                >
+                  {name}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
       <div className="">
         <Label htmlFor="time">Aeg</Label>
