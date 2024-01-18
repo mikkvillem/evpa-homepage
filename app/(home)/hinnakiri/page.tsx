@@ -55,7 +55,7 @@ const PriceCard = ({ product }: { product: Product }) => {
 };
 
 const PricingPage = async () => {
-  const file = await fs.readFile(process.cwd() + '/app/hinnakiri/pricing.json', 'utf8');
+  const file = await fs.readFile(process.cwd() + '/app/(home)/hinnakiri/pricing.json', 'utf8');
   const { products }: { products: Product[] } = JSON.parse(file);
   return (
     <>

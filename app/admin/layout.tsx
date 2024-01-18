@@ -2,6 +2,7 @@ import { Merriweather, Montserrat } from 'next/font/google';
 import '@/app/globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
+import { Metadata } from 'next';
 
 const merriweatherBold = Merriweather({
   weight: '700',
@@ -12,6 +13,13 @@ const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
 });
+
+export const metadata: Metadata = {
+  robots: {
+    follow: false,
+    index: false,
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
