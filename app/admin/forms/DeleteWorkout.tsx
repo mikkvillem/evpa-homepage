@@ -5,11 +5,22 @@ import React from 'react';
 import { useFormState } from 'react-dom';
 import { deleteWorkout } from '../actions';
 import SubmitButton from './SubmitButton';
-
-type Props = Pick<Tund, 'day' | 'time'>;
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
+import { dayName } from '@/lib/utils';
+type Props = Pick<Tund, 'day' | 'time' | 'name'>;
 const initialState: { message: string | null } = { message: null };
 
-const DeleteWorkout = ({ day, time }: Props) => {
+const DeleteForm = ({ day, time }: Props) => {
   const [state, formAction] = useFormState(deleteWorkout, initialState);
   return (
     <form action={formAction}>
@@ -25,9 +36,34 @@ const DeleteWorkout = ({ day, time }: Props) => {
         name="time"
         defaultValue={time}
       />
-      <SubmitButton>X</SubmitButton>
+      <SubmitButton>Kustuta</SubmitButton>
       <p>{state.message}</p>
     </form>
+  );
+};
+
+const DeleteWorkout = ({ day, time, name }: Props) => {
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger className="p-2 rounded-md border-pallette-green border-2 hover:bg-pallette-yellow text-pallette-green font-bold">
+        Kustuta
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Kas oled kindel?</AlertDialogTitle>
+          <AlertDialogDescription>
+            Kinnitades kustutad tunniplaanist valitud tunni:
+            <p className="font-semibold">{`${dayName[day - 1]} - ${time} - ${name}`}</p>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Katkesta</AlertDialogCancel>
+          <AlertDialogAction asChild>
+            <DeleteForm {...{ day, time, name }} />
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 };
 

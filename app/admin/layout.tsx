@@ -1,6 +1,7 @@
 import { Merriweather, Montserrat } from 'next/font/google';
 import '@/app/globals.css';
 import { cn } from '@/lib/utils';
+import { Toaster } from '@/components/ui/toaster';
 
 const merriweatherBold = Merriweather({
   weight: '700',
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
         </div>
+        <Toaster />
       </body>
     </html>
   );

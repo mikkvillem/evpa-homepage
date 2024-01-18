@@ -2,6 +2,7 @@
 import { supabaseClient } from '@/lib/db/client';
 import { revalidatePath } from 'next/cache';
 import { Tund } from '../(home)/tunniplaan/types';
+import { dayName } from '@/lib/utils';
 
 export async function addWorkout(prevState: { message: string | null }, formData: FormData) {
   const formValues = {
@@ -17,7 +18,11 @@ export async function addWorkout(prevState: { message: string | null }, formData
     revalidatePath('/');
     revalidatePath('/tunniplaan');
     revalidatePath('/admin');
-    return { message: `added workout: ${returnData[0].name}` };
+    return {
+      message: `Uus tund: ${dayName[returnData[0].day - 1]} - ${returnData[0].time} - ${
+        returnData[0].name
+      }`,
+    };
   } catch (error) {
     return { message: `${error}` };
   }

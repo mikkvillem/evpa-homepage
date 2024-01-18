@@ -24,7 +24,11 @@ const AdminPage = async (props: Props) => {
   return (
     <div className="w-full">
       <AddWorkout />
-      <Table className="">
+
+      <h2 className="text-center text-2xl font-merriweather-bold mb-4 mt-12">
+        Olemasolev tunniplaan
+      </h2>
+      <Table className="mt-4">
         <TableHeader className="font-merriweather-bold uppercase">
           <TableRow>
             <TableHead>Nädalapäev</TableHead>
@@ -48,6 +52,7 @@ const AdminPage = async (props: Props) => {
                   <DeleteWorkout
                     day={day}
                     time={time}
+                    name={name}
                   />
                 </TableCell>
               </TableRow>
