@@ -10,7 +10,10 @@ const scheduleSubtitle =
   'Tundidesse on vajalik eelnevalt registreerida. Tund toimub vähemalt 3 osalejaga. ';
 
 const TimetablePage = async () => {
-  const { data } = await supabaseClient.from('workouts').select('*');
+  const { data } = await supabaseClient
+    .from('workouts')
+    .select('*')
+    .order('time', { ascending: true });
   const workouts = data as Tund[] | null;
   return (
     <>
