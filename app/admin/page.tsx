@@ -13,9 +13,22 @@ import {
   TableHeader,
 } from '@/components/ui/table';
 
+import { cookies } from 'next/headers';
+import Login from './forms/Login';
+
 type Props = {};
 
 const AdminPage = async (props: Props) => {
+  const currentUser = cookies().get('currentUser');
+
+  if (!currentUser) return <Login />;
+
+  const authedUser = await supabaseClient.auth.getUser();
+  if (!authedUser) {
+    cookies().delete('currentUser');
+    return <Login />;
+  }
+
   const { data: workouts } = await supabaseClient
     .from('workouts')
     .select('*')
