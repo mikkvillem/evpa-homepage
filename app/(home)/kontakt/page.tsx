@@ -1,12 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import MapImage from '@/public/pilates_map.svg';
-import Link from 'next/link';
 import H1 from '@/components/typography/H1';
 
 const contactTitle = 'Kontakt';
 const contact = {
-  phone: '+372 50 99 599',
+  phone: '+372 50 99 559',
   address: 'Jakobsoni 4a, Viljandi',
   email: 'pilateseakadeemia@gmail.com',
 };
@@ -25,7 +24,7 @@ const ContactPage = () => {
               return (
                 <p
                   key={'contact_' + key}
-                  className="text-lg font-semibold text-left text-black sm:text-xl md:mt-4 font-montserrat"
+                  className="text-base font-semibold text-left text-black sm:text-xl md:mt-4 font-montserrat"
                 >
                   {`${typeTitle}: `}
                 </p>
