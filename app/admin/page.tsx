@@ -19,7 +19,7 @@ import Login from './forms/Login';
 type Props = {};
 
 const AdminPage = async (props: Props) => {
-  const currentUser = cookies().get('currentUser');
+  const currentUser = cookies().get('currentSession');
 
   if (!currentUser) return <Login />;
 
