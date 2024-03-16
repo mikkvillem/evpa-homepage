@@ -1,9 +1,9 @@
-import React from 'react';
-import PilatesLogoTransparent from '@/public/pilates_logo_transparent.png';
-import { cn, dayName, addMinutesToTimeString } from '@/lib/utils';
-import type { PropsWithOptionalChildren } from '@/lib/types';
-import type { Tund } from './types';
-import Image from 'next/image';
+import React from "react";
+import PilatesLogoTransparent from "@/public/pilates_logo_transparent.png";
+import { cn, dayName, addMinutesToTimeString } from "@/lib/utils";
+import type { PropsWithOptionalChildren } from "@/lib/types";
+import type { Tund } from "./types";
+import Image from "next/image";
 
 type TimetableProps = {
   className?: string;
@@ -18,15 +18,14 @@ const TableCell = ({
   return (
     <div
       className={cn(
-        'col-span-1 row-span-1 flex items-center justify-center rounded-md border-2 p-2 border-pallette-green',
+        "col-span-1 row-span-1 flex items-center justify-center rounded-md border-2 p-2 border-pallette-green",
         !children
-          ? 'bg-transparent'
+          ? "bg-transparent"
           : heading
-          ? 'bg-pallette-yellow text-pallette-green font-montserrat font-bold'
-          : 'bg-pallette-green text-white font-montserrat text-center',
+          ? "bg-pallette-yellow text-pallette-green font-montserrat font-bold"
+          : "bg-pallette-green text-white font-montserrat text-center",
         className
-      )}
-    >
+      )}>
       {children}
     </div>
   );
@@ -37,18 +36,26 @@ const Timetable = ({ className, workouts }: TimetableProps) => {
     new Set(workouts.map((workout) => workout.day))
   ).sort();
 
-  const timeslots: string[] = Array.from(new Set(workouts.map((workout) => workout.time))).sort();
+  const timeslots: string[] = Array.from(
+    new Set(workouts.map((workout) => workout.time))
+  ).sort();
 
-  const dayTimeWorkoutMap: Record<string, Tund> = workouts.reduce((map, workout) => {
-    const id = workout.day + '_' + workout.time;
-    return { ...map, [id]: workout };
-  }, {});
+  const dayTimeWorkoutMap: Record<string, Tund> = workouts.reduce(
+    (map, workout) => {
+      const id = workout.day + "_" + workout.time;
+      return { ...map, [id]: workout };
+    },
+    {}
+  );
 
-  const workoutsByDay: Record<number, Tund[]> = workouts.reduce((acc, workout) => {
-    acc[workout.day] = acc[workout.day] || [];
-    acc[workout.day].push(workout);
-    return acc;
-  }, Object.create(null));
+  const workoutsByDay: Record<number, Tund[]> = workouts.reduce(
+    (acc, workout) => {
+      acc[workout.day] = acc[workout.day] || [];
+      acc[workout.day].push(workout);
+      return acc;
+    },
+    Object.create(null)
+  );
 
   return (
     <>
@@ -59,8 +66,7 @@ const Timetable = ({ className, workouts }: TimetableProps) => {
             <div
               key={dayName[Number(day) - 1]}
               id={dayName[Number(day) - 1]}
-              className="flex flex-col w-full gap-2 mt-4"
-            >
+              className="flex flex-col w-full gap-2 mt-4">
               <div className="w-full py-1 mb-2 text-base font-semibold text-center border-2 border-pallette-green font-montserrat bg-pallette-yellow text-pallette-green">
                 {dayName[Number(day) - 1]}
               </div>
@@ -68,8 +74,7 @@ const Timetable = ({ className, workouts }: TimetableProps) => {
                 return (
                   <div
                     key={`${day}_${time}`}
-                    className="w-full px-2 py-3 text-left text-white border-2 border-pallette-green font-montserrat bg-pallette-green"
-                  >
+                    className="w-full px-2 py-3 text-left text-white border-2 border-pallette-green font-montserrat bg-pallette-green">
                     <p className="text-xs">
                       Kell {time} - {addMinutesToTimeString(time, duration)}
                     </p>
@@ -84,28 +89,23 @@ const Timetable = ({ className, workouts }: TimetableProps) => {
       {/* Desktop */}
       <div
         style={{
-          gridTemplateColumns: `repeat(${daysWithWorkouts.length + 1}, minmax(0, 1fr))`,
+          gridTemplateColumns: `repeat(${
+            daysWithWorkouts.length + 1
+          }, minmax(0, 1fr))`,
           gridTemplateRows: `repeat(${timeslots.length + 1}, minmax(0, 1fr))`,
         }}
         className={cn(
-          'hidden md:grid p-1 gap-1 border-2 bg-pallette-beige border-pallette-green rounded-md grid-cols-1',
+          "hidden md:grid p-1 gap-1 border-2 bg-pallette-beige border-pallette-green rounded-md grid-cols-1",
           className
-        )}
-      >
-        <TableCell
-          heading
-          className="bg-white"
-        >
+        )}>
+        <TableCell heading className="bg-white">
           <Image
             src={PilatesLogoTransparent}
             alt="Erika Viira Pilatese Akadeemia logo"
           />
         </TableCell>
         {daysWithWorkouts.map((day) => (
-          <TableCell
-            heading
-            key={dayName[day - 1]}
-          >
+          <TableCell heading key={dayName[day - 1]}>
             {dayName[day - 1][0]}
           </TableCell>
         ))}
@@ -113,7 +113,7 @@ const Timetable = ({ className, workouts }: TimetableProps) => {
           <React.Fragment key={time}>
             <TableCell heading>{time}</TableCell>
             {daysWithWorkouts.map((day) => {
-              const id = day + '_' + time;
+              const id = day + "_" + time;
               return dayTimeWorkoutMap[id] ? (
                 <TableCell key={id}>{dayTimeWorkoutMap[id].name}</TableCell>
               ) : (
