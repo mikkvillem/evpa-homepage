@@ -30,5 +30,9 @@ npx supabase login
 npx supabase start
 # run migrations and seed
 npx supabase db reset
+# after db changes create migration
+npx supabase db diff --use-migra -f [migration_name]
+# push changes
+npx supabase db push
 
 ```

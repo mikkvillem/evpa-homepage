@@ -1,5 +1,5 @@
-INSERT INTO "public"."workouts" ("day", "time", "duration", "name", "instructor") VALUES
-	(1, '18:00', 60, 'L1', 'Erika'),
+INSERT INTO "public"."workouts" ("day", "time", "duration", "name", "instructor")
+VALUES (1, '18:00', 60, 'L1', 'Erika'),
 	(2, '10:00', 60, 'Baas / L1', 'Erika'),
 	(2, '16:30', 60, 'L1 / L2', 'Erika'),
 	(2, '17:30', 60, 'L1', 'Erika'),
@@ -15,3 +15,9 @@ INSERT INTO "public"."workouts" ("day", "time", "duration", "name", "instructor"
 	(3, '18:00', 60, 'Yin jooga', 'Erika'),
 	(5, '12:00', 60, 'Yin jooga', 'Erika'),
 	(7, '10:00', 60, 'L1', 'Erika');
+INSERT INTO "public"."pricing" ("price", "name", "quantity", "info")
+VALUES (15, 'Rühmatreening', '(1 kord)', NULL),
+	(40, 'Rühmatreeningud', '(4-korra kaart)', '{"Kehtib 1 kuu"}'),
+	(65, 'Rühmatreeningud', '(8-korra kaart)', '{"Kehtib 1 kuu"}'),
+	(30, 'Personaaltreening', '(1 kord)', NULL),
+	(40, 'Duo-treening', '(1 kord)', NULL);
