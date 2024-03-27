@@ -1,21 +1,19 @@
-import { promises as fs } from "fs";
-import type { Tund } from "./tunniplaan/types";
-import Link from "next/link";
-import Divider from "@/components/layout/nav/Divider";
-import TodaysClasses from "./TodaysClasses";
-import { supabaseClient } from "@/lib/db/client";
+import type { Tund } from './tunniplaan/types';
+import Link from 'next/link';
+import Divider from '@/components/layout/nav/Divider';
+import TodaysClasses from './TodaysClasses';
+import { supabaseClient } from '@/lib/db/client';
 
-const heroTitle = "Tule, võimleme koos!";
+const heroTitle = 'Tule, võimleme koos!';
 const heroSubtitle =
-  "Ootan Sind Pilatese treeningutesse koduses Viljandi kesklinna stuudios!";
+  'Ootan Sind Pilatese treeningutesse koduses Viljandi kesklinna stuudios!';
 
 export default async function Home() {
   const { data } = await supabaseClient
-    .from("workouts")
-    .select("*")
-    .order("time", { ascending: true });
+    .from('workouts')
+    .select('*')
+    .order('time', { ascending: true });
   const workouts = data as Tund[] | null;
-  console.log({ workouts });
   return (
     <>
       <h1 className="mt-10 mb-2 text-2xl text-center text-black sm:mt-8 sm:text-4xl md:mt-14 font-merriweather-bold md:text-6xl">
@@ -31,7 +29,7 @@ export default async function Home() {
       </h2>
       <TodaysClasses workouts={workouts || []} />
       <Link
-        href={"/tunniplaan"}
+        href={'/tunniplaan'}
         className="hover:scale-[102%] ease-in-out hover:opacity-95 transition duration-300 flex w-full gap-2 p-4 ml-auto text-white sm:w-auto bg-pallette-green md:text-xl font-montserrat">
         Vaata kogu tunniplaani
         <svg
