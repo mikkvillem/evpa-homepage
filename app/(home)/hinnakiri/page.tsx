@@ -4,11 +4,11 @@ import { Product } from './types';
 import PilatesLogoTransparent from '@/public/pilates_logo_transparent.png';
 import Image from 'next/image';
 import H1 from '@/components/typography/H1';
-
+import { supabaseClient } from '@/lib/db/client';
 const pricingTitle = 'Hinnakiri';
 const pricingSubtitle = 'Kehtiv alates 15. jaanuar 2024';
 
-const PriceCard = ({ product }: { product: Product }) => {
+const PriceCard = async ({ product }: { product: Product }) => {
   const { id, name, price, info, quantity } = product;
 
   const priceString = new Intl.NumberFormat('et-ET', {
@@ -23,8 +23,7 @@ const PriceCard = ({ product }: { product: Product }) => {
       before:content-[''] before:absolute before:left-0 before:-z-10 before:w-full before:h-full 
       before:rounded-sm before:outline-8 before:outline-pallette-pink before:outline 
       bg-pallette-pink rounded-md border-dashed border-2 border-pallette-green
-      "
-    >
+      ">
       <div className="py-2 sm:py-0 sm:px-2">
         <div className="flex items-center justify-center w-20 h-full border-r-2 border-dashed sm:p-4 sm:border-r-0 sm:border-b-2 sm:w-full border- border-pallette-green">
           <Image
@@ -37,12 +36,10 @@ const PriceCard = ({ product }: { product: Product }) => {
       <div className="flex flex-col justify-between flex-1 py-6">
         <h2 className="relative text-lg font-merriweather-bold">{name}</h2>
         <h3 className="relative mb-auto font-merriweather-bold">{quantity}</h3>
-        {info.length > 0 &&
+        {info &&
+          info.length > 0 &&
           info.map((bullet, index) => (
-            <p
-              key={id + '_bullet_' + index}
-              className="relative mb-2"
-            >
+            <p key={id + '_bullet_' + index} className="relative mb-2">
               {bullet}
             </p>
           ))}
@@ -55,8 +52,10 @@ const PriceCard = ({ product }: { product: Product }) => {
 };
 
 const PricingPage = async () => {
-  const file = await fs.readFile(process.cwd() + '/app/(home)/hinnakiri/pricing.json', 'utf8');
-  const { products }: { products: Product[] } = JSON.parse(file);
+  const { data } = await supabaseClient
+    .from('pricing')
+    .select('*')
+    .order('priority', { ascending: true });
   return (
     <>
       <H1>{pricingTitle}</H1>
@@ -64,12 +63,11 @@ const PricingPage = async () => {
         {pricingSubtitle}
       </p>
       <div className="flex flex-wrap justify-center w-full gap-4 sm:gap-6 mt-8">
-        {products.map((product) => (
-          <PriceCard
-            key={product.id}
-            product={product}
-          />
-        ))}
+        {data
+          ? data.map((product) => (
+              <PriceCard key={product.id} product={product} />
+            ))
+          : 'Hinnakiri avaldatakse peatselt.'}
       </div>
     </>
   );

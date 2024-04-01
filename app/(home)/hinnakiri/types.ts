@@ -3,5 +3,6 @@ export type Product = {
   name: string;
   quantity: string;
   price: number;
-  info: string[];
+  info: string[] | null;
+  priority: number | null;
 };

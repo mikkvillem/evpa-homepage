@@ -15,9 +15,9 @@ VALUES (1, '18:00', 60, 'L1', 'Erika'),
 	(3, '18:00', 60, 'Yin jooga', 'Erika'),
 	(5, '12:00', 60, 'Yin jooga', 'Erika'),
 	(7, '10:00', 60, 'L1', 'Erika');
-INSERT INTO "public"."pricing" ("price", "name", "quantity", "info")
-VALUES (15, 'Rühmatreening', '(1 kord)', NULL),
-	(40, 'Rühmatreeningud', '(4-korra kaart)', '{"Kehtib 1 kuu"}'),
-	(65, 'Rühmatreeningud', '(8-korra kaart)', '{"Kehtib 1 kuu"}'),
-	(30, 'Personaaltreening', '(1 kord)', NULL),
-	(40, 'Duo-treening', '(1 kord)', NULL);
+INSERT INTO "public"."pricing" ("price", "name", "quantity", "info", "priority")
+VALUES (15, 'Rühmatreening', '(1 kord)', NULL, 1),
+	(40, 'Rühmatreeningud', '(4-korra kaart)', '{"Kehtib 1 kuu"}', 2),
+	(65, 'Rühmatreeningud', '(8-korra kaart)', '{"Kehtib 1 kuu"}', 3),
+	(30, 'Personaaltreening', '(1 kord)', NULL, 4),
+	(40, 'Duo-treening', '(1 kord)', NULL, 5);
