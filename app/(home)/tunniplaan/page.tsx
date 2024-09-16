@@ -18,20 +18,22 @@ const TimetablePage = async () => {
   return (
     <>
       <H1>{scheduleTitle}</H1>
-      <p className="max-w-2xl text-lg font-light text-black md:text-center sm:mt-2 md:mt-4 font-montserrat md:text-xl">
+      <p className="max-w-2xl text-lg font-light text-black md:text-center sm:mt-2 md:mt-4  font-montserrat md:text-xl">
+        Kehtiv alates 01.09.2024
+      </p>
+      <Divider />
+      <p className="max-w-2xl text-lg font-light text-black md:text-center mb-4 font-montserrat md:text-xl">
         {scheduleSubtitle}
         <span>
           Registreerimiseks{' '}
           <Link
             href="/kontakt"
-            className="text-pallette-green font-semibold hover:underline hover:underline-offset-2"
-          >
+            className="text-pallette-green font-semibold hover:underline hover:underline-offset-2">
             võta ühendust
           </Link>
           .
         </span>
       </p>
-      <Divider />
       <Timetable workouts={workouts || []} />
     </>
   );
