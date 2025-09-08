@@ -28,7 +28,7 @@ export const classes = [
     day: 3,
     time: '18:00',
     duration: 60,
-    name: 'Yin jooga',
+    name: 'L1',
     instructor: 'Erika',
   },
   {
@@ -58,7 +58,7 @@ export const classes = [
   { day: 7, time: '10:00', duration: 60, name: 'L1', instructor: 'Erika' },
   {
     day: 7,
-    time: '11:30',
+    time: '11:00',
     duration: 60,
     name: 'START-tund (alates 14.09)',
     instructor: 'Erika',
