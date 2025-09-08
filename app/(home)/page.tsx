@@ -2,17 +2,20 @@ import type { Tund } from './tunniplaan/types';
 import Link from 'next/link';
 import Divider from '@/components/layout/nav/Divider';
 import TodaysClasses from './TodaysClasses';
-import { supabaseClient } from '@/lib/db/client';
+/* import { supabaseClient } from '@/lib/db/client'; */
+import { classes as data } from '@/lib/timetable';
 
 const heroTitle = 'Tule, võimleme koos!';
+
 const heroSubtitle =
   'Ootan Sind Pilatese treeningutesse koduses Viljandi kesklinna stuudios!';
 
 export default async function Home() {
-  const { data } = await supabaseClient
-    .from('workouts')
-    .select('*')
-    .order('time', { ascending: true });
+  // const { data } = await supabaseClient
+  //   .from('workouts')
+  //   .select('*')
+  //   .order('time', { ascending: true });
+
   const workouts = data as Tund[] | null;
   return (
     <>

@@ -52,10 +52,54 @@ const PriceCard = async ({ product }: { product: Product }) => {
 };
 
 const PricingPage = async () => {
-  const { data } = await supabaseClient
+  /*   const { data } = await supabaseClient
     .from('pricing')
     .select('*')
-    .order('priority', { ascending: true });
+    .order('priority', { ascending: true }); */
+
+  const data = [
+    {
+      id: '1',
+      name: 'Rühmatreening',
+      quantity: '1 kord',
+      price: 15,
+      info: null,
+      priority: 1,
+    },
+    {
+      id: '2',
+      name: 'Rühmatreeningud',
+      quantity: '4-korra kaart',
+      price: 40,
+      info: ['Kehtib 1 kuu'],
+      priority: 2,
+    },
+    {
+      id: '3',
+      name: 'Rühmatreeningud',
+      quantity: '8-korra kaart',
+      price: 65,
+      info: ['Kehtib 1 kuu'],
+      priority: 3,
+    },
+    {
+      id: '4',
+      name: 'Personaaltreening',
+      quantity: '1 kord',
+      price: 30,
+      info: null,
+      priority: 4,
+    },
+    {
+      id: '5',
+      name: 'Duo-treening',
+      quantity: '1 kord',
+      price: 40,
+      info: null,
+      priority: 5,
+    },
+  ];
+
   return (
     <>
       <H1>{pricingTitle}</H1>
